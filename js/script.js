@@ -1,18 +1,24 @@
+// Tambahkan event listener pada form dengan ID 'bmiForm' untuk mencegah submit default dan menghitung BMI
 document.getElementById('bmiForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Mencegah form dari submit default
 
+    // Ambil nilai dari input berat dan tinggi
     let weight = document.getElementById('weight').value;
     let height = document.getElementById('height').value;
+    // Hitung BMI dan format hasilnya menjadi 1 desimal
     let bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
 
+    // Tampilkan hasil BMI
     document.getElementById('bmiValue').textContent = bmi;
 
+    // Variabel untuk kategori BMI, pesan, saran, dan daftar penyakit
     let category = '';
     let message = '';
     let adviceMessage = '';
     let adviceContent = '';
     let diseasesList = document.getElementById('diseasesList');
 
+    // Tentukan kategori, pesan, dan saran berdasarkan nilai BMI
     if (bmi < 18.5) {
         category = 'Kekurangan berat badan';
         message = 'Anda memiliki berat badan kurang';
@@ -50,7 +56,7 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         adviceMessage = 'Hasil BMI diantara 25 dan 29.9';
         adviceContent = 'Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalori makanan yang dikonsumsi dan berolahraga.';
         diseasesList.innerHTML = `
-            <h3>Beberapa penyakit yang berasal dari gemuk/h3>
+            <h3>Beberapa penyakit yang berasal dari gemuk</h3>
             <ul>
                 <li>Diabetes</li>
                 <li>Hipertensi</li>
@@ -78,13 +84,15 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         `;
     }
 
+    // Tampilkan kategori BMI, pesan, saran, dan daftar penyakit
     document.getElementById('bmiCategory').textContent = category;
     document.getElementById('bmiMessage').textContent = message;
     document.getElementById('adviceMessage').textContent = adviceMessage;
     document.getElementById('adviceContent').textContent = adviceContent;
-    document.getElementById('resultSection').style.display = 'block';
+    document.getElementById('resultSection').style.display = 'block'; // Tampilkan bagian hasil
 });
 
+// Tambahkan event listener pada tombol reset untuk menyembunyikan bagian hasil
 document.getElementById('resetButton').addEventListener('click', function() {
-    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('resultSection').style.display = 'none'; // Sembunyikan bagian hasil
 });
