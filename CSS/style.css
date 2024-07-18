@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    text-align: justify;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#resultSection {
+    display: none;
+}
+
+.calculator, .result {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.diseases h3 {
+    font-weight: lighter;
+    text-align: center;
+}
+
+form {
+    background-color: aliceblue;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="number"], input[type="radio"], button {
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: forestgreen;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: crimson;
+}
+
+.features, .advice, .diseases {
+    margin-top: 20px;
+}
+
+.features h3, .diseases h3 {
+    margin-top: 0;
+}
+
+.download-apps {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-apps img {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.features ol {
+    padding-left: 20px;
+}
+
+.bmi-result {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bmi-result h3 {
+    margin: 10px 0;
+}
+
+.advice p, .diseases ul {
+    margin: 10px 0;
+}
+
+.diseases-list {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.diseases ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.diseases-list ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    
+    .calculator, .result {
+        margin-bottom: 0;
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
